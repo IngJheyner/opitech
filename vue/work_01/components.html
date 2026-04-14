@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Componentes</title>
+</head>
+<body>
+
+  <div id="app">
+
+    <button-counter></button-counter><br>
+    <button-counter></button-counter>
+
+    <br>
+
+    <div :style="{ fontSize: textSize + 'em'}">
+      <template v-for="course in courses" :key="course.id">
+          <!-- <detail-course
+          :course="course"
+          @crecer-texto="textSize += $event"
+          >
+          </detail-course> -->
+
+          <detail-course
+          :course="course"
+          @crecer-texto="incrementarTexto"
+          >
+          <p>Este es el mejor curso que puedes encontrar en la web</p>
+          </detail-course>
+      </template>
+    </div>
+
+  </div>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <script src="./main.js"></script>
+
+  <script>
+    app.mount('#app')
+  </script>
+
+</body>
+
+</html>
